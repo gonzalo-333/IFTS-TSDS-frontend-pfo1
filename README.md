@@ -5,7 +5,7 @@ Landing page de portfolio personal desarrollada con **HTML5 y CSS3 puro**, como 
 ## 🔗 Enlaces
 
 - **Sitio publicado:** _(pendiente de publicar en Vercel — se agrega el link una vez desplegado)_
-- **Repositorio:** _(a completar con la URL del repo)_
+- **Repositorio:** [_(a completar con la URL del repo)_](https://github.com/gonzalo-333/IFTS-TSDS-frontend-pfo1)
 - **GitHub:** [github.com/gonzalo-333](https://github.com/gonzalo-333)
 - **Contacto:** mgs.argentum@gmail.com
 
