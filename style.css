@@ -1,0 +1,756 @@
+/* ==========================================================================
+   1. SETEO BÁSICO
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+/* ==========================================================================
+   2. VARIABLES / PALETA NORD (POLAR NIGHT)
+   ========================================================================== */
+:root {
+  /* Nord Polar Night (fondos) */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+
+  /* Nord Snow Storm (textos claros) */
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  /* Nord Frost (acentos) */
+  --frost-1: #8fbcbb;
+  --frost-2: #88c0d0;
+  --frost-3: #81a1c1;
+  --frost-4: #5e81ac;
+
+  --bg-main: var(--nord0);
+  --bg-card: var(--nord1);
+  --bg-input: var(--nord0);
+  --border-color: var(--nord2);
+  --border-hover: var(--nord3);
+
+  --text-main: var(--nord6);
+  --text-muted: var(--nord4);
+  --text-dim: #9aa5b8;
+
+  --accent: var(--frost-2);
+  --accent-hover: var(--frost-1);
+
+  --font-body: 'Roboto', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  --content-width: min(1100px, 92vw);
+  --section-padding: clamp(3rem, 7vw, 6rem);
+  --radius: 10px;
+}
+
+/* ==========================================================================
+   3. BASE
+   ========================================================================== */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--accent);
+  margin-left: 4px;
+  vertical-align: -2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Capa de scanlines (CRT retro), muy sutil */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.35;
+}
+
+/* Contenedores genéricos reutilizados en secciones que ya traen su propio wrapper */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   4. HEADER / NAVEGACIÓN
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(46, 52, 64, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links .github-link {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+}
+
+.nav-links .github-link:hover {
+  background: rgba(136, 192, 208, 0.1);
+  color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   5. HERO
+   ========================================================================== */
+#hero {
+  padding: calc(var(--section-padding) + 4rem) 1.5rem var(--section-padding);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  text-align: center;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: var(--frost-3);
+  margin-bottom: 1.25rem;
+}
+
+.bio-short {
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 1.75rem;
+  font-size: 1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-media {
+  flex-shrink: 0;
+}
+
+/* Foto del hero: recuadro rectangular, escala de grises -> color al hover */
+.avatar {
+  width: clamp(200px, 30vw, 260px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 2px solid var(--border-color);
+  filter: grayscale(100%) contrast(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: filter 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+
+.avatar:hover {
+  filter: grayscale(0%) contrast(1);
+  border-color: var(--accent);
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   6. BOTONES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--nord0);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   7. SECCIONES — LAYOUT GENERAL
+   ========================================================================== */
+main > section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--section-padding) 1.5rem;
+}
+
+main > section > h2 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   8. HABILIDADES
+   ========================================================================== */
+.skills-group {
+  margin-bottom: 2.5rem;
+}
+
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.skills-group h3 {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 100px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem 0.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card i {
+  font-size: 2rem;
+}
+
+.skill-card .devicon-github-original {
+  filter: invert(1);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================================================
+   9. EXPERIENCIA
+   ========================================================================== */
+#experiencia > .bio-short {
+  margin: 0 0 2rem;
+  max-width: 700px;
+  text-align: left;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-main));
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   10. SOBRE MÍ
+   ========================================================================== */
+.sobre-mi-card {
+  background-color: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  max-width: 780px;
+}
+
+.sobre-mi-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   11. MÁS ALLÁ DEL CÓDIGO — TARJETAS 3D
+   ========================================================================== */
+.contenedor-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  perspective: 1000px;
+}
+
+.card .face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+}
+
+.card .face.front {
+  background-color: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  transform: rotateY(0deg);
+  border: 1px solid var(--border-color);
+}
+
+.card .face.front img {
+  width: 100%;
+  height: 78%;
+  object-fit: cover;
+  filter: grayscale(40%);
+  transition: filter 0.4s ease;
+}
+
+.card:hover .face.front img {
+  filter: grayscale(0%);
+}
+
+.card .face.front h3 {
+  height: 22%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  font-size: 1rem;
+  background-color: var(--bg-card);
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.card .face.back {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-hover);
+  color: var(--text-main);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.card .face.back p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (hover: hover) {
+  .card:hover .face.front {
+    transform: rotateY(-180deg);
+  }
+  .card:hover .face.back {
+    transform: rotateY(0deg);
+  }
+}
+
+/* ==========================================================================
+   12. CONTACTO
+   ========================================================================== */
+.section-contacto {
+  text-align: left;
+}
+
+.contacto-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+.contacto-info p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.contacto-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent);
+}
+
+.contact-link .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  padding: 1.75rem;
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contacto-form p {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(136, 192, 208, 0.2);
+}
+
+/* ==========================================================================
+   13. FOOTER
+   ========================================================================== */
+footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE
+   ========================================================================== */
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  #hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  .bio-short {
+    margin: 0 0 1.75rem;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .navbar {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .contenedor-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 0.6rem 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+  }
+
+  .contenedor-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: auto;
+    perspective: none;
+  }
+
+  .card .face {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    backface-visibility: visible;
+  }
+
+  .card .face.front {
+    border-radius: var(--radius) var(--radius) 0 0;
+    transform: none;
+  }
+
+  .card .face.front img {
+    height: 220px;
+  }
+
+  .card .face.front h3 {
+    height: auto;
+    min-height: 56px;
+    padding: 0.75rem;
+  }
+
+  .card .face.back {
+    transform: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    border-top: none;
+  }
+
+  .avatar {
+    width: clamp(180px, 55vw, 240px);
+  }
+}

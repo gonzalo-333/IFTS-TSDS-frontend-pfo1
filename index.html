@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio personal de desarrollo de software.">
+    <title>Gonzalo Santini | Portfolio Personal</title>
+    
+    <!-- Preconexión y carga de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Devicon: iconos de habilidades tecnicas -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Capa de scanlines simulando CRT de videojuegos retro -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Comentario explicativo 1: Encabezado principal y navegación semántica estructurada para SEO y accesibilidad -->
+    <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+        <a href="#hero" class="logo" aria-label="Ir al inicio">:: GS</a>
+            <ul class="nav-links">
+                <li><a href="#presentacion">Presentación</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#intereses">Más allá del código</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <!-- Requisito PFO1: Enlace visible a GitHub -->
+                    <a href="https://github.com/gonzalo-333" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="Visitar mi perfil de GitHub">
+            GitHub <span aria-hidden="true">↗</span>
+        </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+	  <p class="eyebrow">gonzalo@portfolio:~$ neofetch<span class="cursor" aria-hidden="true"></span></p>
+          <h1 id="hero-title">
+            Hola, soy <span class="highlight">Gonzalo Santini</span>.<br />
+          </h1>
+          <p class="subtitle">DESARROLLADOR DE SOFTWARE</p>
+          <p class="bio-short">
+            El desarrollo full stack me permite moverme entre la lógica abstracta del backend 
+            y la parte visible y estética del frontend, siempre con ganas de seguir aprendiendo. 
+            Trabajar en entornos Linux y entender cómo funciona cada capa de un 
+            sistema es una de las aristas que más disfruto de programar.
+          </p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn btn-primary">Contactarme</a>
+          <a href="https://github.com/gonzalo-333" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Mi GitHub
+          </a>
+        </div>
+	</div>
+        <div class="hero-media">
+          <img
+            class="avatar"
+            src="https://i1.sndcdn.com/artworks-ezaXHmAEF5dawDrz-DTHNeA-t1080x1080.jpg"
+            alt="Gonzalo Santini"
+            loading="lazy"
+            width="280"
+            height="280"
+          />
+        </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <!-- Comentario explicativo 2: Sección de presentación general sobre mis conocimientos relativos al mundo del desarrollo de software -->
+      <section id="habilidades" class="skills" aria-labelledby="habilidades-title">
+	  <p class="eyebrow">gonzalo@portfolio:~$ ls skills<span class="cursor" aria-hidden="true"></span></p>
+        <h2 id="habilidades-title">Habilidades</h2>
+        <div class="skills-group">
+          <h3>Técnicas</h3>
+          <ul class="skills-cards">
+            <li class="skill-card">
+              <i class="devicon-java-plain colored"></i><span>Java</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-spring-plain colored"></i
+              ><span>Spring Boot</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-cplusplus-plain colored"></i><span>C++</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-csharp-plain colored"></i><span>C#</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-python-plain colored"></i><span>Python</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-html5-plain colored"></i><span>HTML</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-css3-plain colored"></i><span>CSS</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-javascript-plain colored"></i
+              ><span>JavaScript</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-react-original colored"></i><span>React</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-neovim-plain colored"></i
+              ><span>Neovim</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-github-original colored"></i><span>GitHub</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-linux-plain colored"></i><span>Linux</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-nodejs-plain-wordmark colored"></i><span>Node.js</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-typescript-plain colored"></i><span>Typescript</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-r-plain colored"></i><span>R</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-postman-plain colored"></i><span>Postman</span>
+            </li>
+            <li class="skill-card">
+              <i class="devicon-markdown-original colored"></i><span>Markdown</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Blandas</h3>
+          <ul class="skills-cards">
+            <li class="skill-card">Comunicación efectiva</li>
+            <li class="skill-card">Trabajo en equipo</li>
+            <li class="skill-card">Adaptabilidad</li>
+            <li class="skill-card">Orientación a resultados</li>
+            <li class="skill-card">Autonomía</li>
+            <li class="skill-card">Gestión del tiempo</li>
+          </ul>
+        </div>
+      </section>
+
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="section" aria-labelledby="experiencia-title">
+	  <p class="eyebrow">gonzalo@portfolio:~$ history | grep "xp"<span class="cursor" aria-hidden="true"></span></p>
+            <h2 id="experiencia-title"> Experiencia </h2>
+            <p class="bio-short">
+            Estos son algunos de los proyectos en los que fui aplicando lo que aprendo 
+            en la UTN y en el IFTS: desde e-commerce hasta videojuegos, pasando por aplicaciones de escritorio, móvil y automatización.
+            </p>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>
+                        Plataforma de venta online //
+                    </h3>
+                    <p>
+                        Desarrollo full stack de ecommerce para local de fast-food.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        Aplicación para clínica //
+                    </h3>
+                    <p>
+                        Aplicación de escritorio, desarrollada en C#, para manejo y gestión de la clínica.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        Aplicación para gimnasio //
+                    </h3>
+                    <p>
+                        Aplicación móvil, desarrollada en Kotlin, para manejo y gestión de gimnasio.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        Reportes y datos //
+                    </h3>
+                    <p>
+                        Consultas sobre bases SQL y visualización y análisis de datos estadísticos con R.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        Automatizaciones //
+                    </h3>
+                    <p>
+                        Scripts y flujos que reducen trabajo manual mediante el uso de Bash.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <h3>
+                        Videojuegos //
+                    </h3>
+                    <p>
+                        Diseño y desarrollo de videojuegos en C++ como parte de mi aprendizaje, por medio de la biblioteca Raylib.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MI -->
+        <section id="sobre-mi" aria-labelledby="sobre-mi-title">
+	  <p class="eyebrow">gonzalo@portfolio:~$ cat sobre_mi.txt<span class="cursor" aria-hidden="true"></span></p>
+            <h2 id="sobre-mi-title">Sobre mí</h2>
+                <div class="sobre-mi-card">
+                    <p>
+                    Al cursar la Tecnicatura en Programación de la UTN vengo con una base 
+                    del mundo de Java, Spring Boot y Bases de Datos. Además de contar con
+                    conocimiento de C++, por mi interés en el desarrollo de videojuegos. 
+                    Esta base de conocimientos la amplio en gran manera cursando en paralelo 
+                    la Tecnicatura Superior en Desarrollo de Software, en donde adquiero otros 
+                    tantos que me permiten completar el recorrido de una aplicación de punta 
+                    a punta —del backend a la interfaz, sin olvidar que el recorrido comienza
+                    con los requisitos del cliente. Este portfolio es parte de ese proceso 
+                    diario, en el cual conocimientos nuevos día a día.
+                    </p>
+                </div>
+        </section>
+
+        <!-- Comentario explicativo 3: Sección dinámica para mostrar intereses utilizando tarjetas iterables -->
+        <section id="intereses" aria-labelledby="intereses-title">
+	  <p class="eyebrow">gonzalo@portfolio:~$ du -sh /beyondCode<span class="cursor" aria-hidden="true"></span></p>
+            <h2 id="intereses-title">Más allá del código...</h2>
+
+  <div class="contenedor-cards">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="face front">
+        <img src="https://www.esdip.com/wp-content/uploads/2022/02/curso-de-ilustracion-digital_esdip.jpg" alt="Dibujo e Ilustracion digital">
+        <h3>Dibujo e Ilustración digital</h3>
+      </div>
+      <div class="face back">
+        <p>Dibujar es de las cosas que más disfruto fuera del código. La ilustración digital 
+        con tableta gráfica y Krita me ofrece un lienzo infinito. Me permite 
+        experimentar con texturas, detalles e ideas, combinando mi curiosidad 
+        técnica con mi lado más creativo para desconectarme un rato.
+        </p> 
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="face front">
+        <img src="https://media.revistagq.com/photos/65b12cfd195fefc5e6d8fe02/3:2/w_2559,h_1706,c_limit/fitness%20portada.jpg" alt="Entrenamiento">
+        <h3>Entrenamiento</h3>
+      </div>
+      <div class="face back">
+        <p>Mantengo una rutina de entrenamiento de fuerza tres veces por semana. 
+        Más allá del bienestar físico, es mi ancla para mantener el equilibrio y 
+        la disciplina, cualidades fundamentales que me ayudan a mantener la 
+        concentración en mis estudios y proyectos.
+        </p> 
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="face front">
+        <img src="https://i0.wp.com/www.psicologiaflexible.com/wp-content/uploads/Tarot-i-efecte-Forer-Psicologia-Flexible.jpeg" alt="Tarot">
+        <h3>Tarot</h3>
+      </div>
+      <div class="face back">
+        <p>Encuentro en el tarot una herramienta fascinante para la introspección y 
+        el análisis de arquetipos. Me interesa su riqueza simbólica y narrativa, 
+        viéndolo como una forma diferente de interpretar historias y patrones que 
+        conectan con la experiencia humana.
+        </p> 
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="face front">
+        <img src="https://t4.ftcdn.net/jpg/04/36/10/09/360_F_436100949_TjLhwlstteQuOdiKGNBmmDkGcOhkyqxI.jpg" alt="Tattoo">
+        <h3>Tattoo</h3>
+      </div>
+      <div class="face back">
+        <p>Tengo experiencia tatuando. Es una disciplina artística que me encanta y 
+        que exige una enorme precisión, atención al detalle y un profundo respeto por 
+        el cliente, cualidades que trato de trasladar a otras pasiones.
+        </p> 
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <div class="face front">
+        <img src="https://cdn.mos.cms.futurecdn.net/FphSYahLmczMc8yMeaS2bU.jpg" alt="Videojuegos">
+        <h3>Videojuegos</h3>
+      </div>
+      <div class="face back">
+        <p>Disfruto de los videojuegos como espacio de entretenimiento, exploración y 
+        descubrimiento de nuevas formas de interacción. Soy fanático del retro gaming 
+        en particular, me atrae todo lo que tiene que ver con preservar consolas 
+        clásicas, emular y analizar interfaces de otra época.
+        </p> 
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <div class="face front">
+        <img src="https://img.magnific.com/fotos-premium/diseno-fondo-archivo-musica-biblioteca-dia-mundial-patrimonio-audiovisual_1280710-7899.jpg" alt="Otros intereses">
+        <h3>Otros intereses</h3>
+      </div>
+      <div class="face back">
+        <p>Soy un gran consumidor de libros sobre variados temas, fan de películas de 
+        terror y, en cuanto a música, mi playlist va del heavy metal al black metal 
+        ambiental y el dungeon synth —sin dejar afuera, claro, la música de videojuegos.
+        </p> 
+      </div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Comentario explicativo 4: Formulario de contacto con etiquetas label para maximizar la accesibilidad de los inputs -->
+    <section id="contacto" class="section section-contacto" aria-labelledby="contacto-title">
+      <div class="container">
+
+        <h2 id="contacto-title">Contacto</h2>
+        
+        <div class="contacto-wrapper">
+          
+          <div class="contacto-info">
+            <p>¿Querés conocer más sobre mi trabajo? Podés enviarme un email o visitar 
+            mi perfil en GitHub y, con mucho gusto, conversar sobre ese proyecto que 
+            tenés en mente, intercambio de ideas o cualquier cuestión técnica.
+            </p>            
+            <div class="contacto-links">
+              <a href="mailto:mgs.argentum@gmail.com" class="contact-link">
+                <span class="icon">✉</span>
+                <span>mgs.argentum@gmail.com</span>
+              </a>
+              <a href="https://github.com/gonzalo-333" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <span class="icon">💼</span>
+                <span>github.com/gonzalo-333</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contacto-form" action="#" method="POST">
+            <div class="form-group">
+            <p>(Todos los campos son obligatorios)</p>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="asunto">Asunto</label>
+              <input type="text" id="asunto" name="asunto" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 :: Gonzalo Santini :: Hecho con HTML y CSS.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
